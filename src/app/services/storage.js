@@ -117,7 +117,7 @@ app.service('Storage', function() {
     r.settings = JSON.parse(localStorage.getItem('tbsetting'));
 		if (!r.settings){
 			r.settings = {
-				rpc : "https://mainnet.tezrpc.me",
+				rpc : "https://api.tez.ie",
 				language : "english",
 				disclaimer : false,
 				apiMode : true,

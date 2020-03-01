@@ -11,7 +11,7 @@ app
   $scope.setting = Storage.settings;
   if (!$scope.setting) {
     $scope.setting = {
-      rpc : "https://mainnet.tezrpc.me",
+      rpc : "https://api.tez.ie",
       language : "english",
       disclaimer : false
     };
@@ -879,13 +879,13 @@ app
 .controller('SettingController', ['$scope', '$location', 'Storage', 'SweetAlert', 'Lang', function($scope, $location, Storage, SweetAlert, Lang) {
   $scope.setting = Storage.loadSetting();
 	$scope.customRpc = '';
-	if (['https://mainnet.tezrpc.me','https://alphanet.tezrpc.me','https://zeronet.tezrpc.me'].indexOf($scope.setting.rpc) >= 0){
+	if (['https://api.tez.ie/rpc/mainnet','https://api.tez.ie/rpc/babylonnet','https://api.tez.ie/rpc/carthagenet'].indexOf($scope.setting.rpc) >= 0){
 		$scope.rpc = $scope.setting.rpc;
 		$scope.showCustom = false;		
 	} else {
-		$scope.rpc = "https://mainnet.tezrpc.me";
+		$scope.rpc = "https://api.tez.ie/rpc/mainnet";
 		$scope.customRpc = $scope.rpc;
-		$scope.showCustom = true;		
+		$scope.showCustom = true;
 	}
   $scope.removeFromList = function(l, v){
 		if (['whitelist', 'blacklist'].indexOf(l) < 0) return false;
